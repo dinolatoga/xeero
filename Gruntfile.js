@@ -10,7 +10,18 @@ module.exports = function(grunt){
 			less: {
 				build: {
 					files: {
-							'css/master.css': ['less/master.less']
+							'build/css/master-unprefixed.css': ['dev/less/master.less']
+					}
+				}
+			},
+
+			autoprefixer: {
+				options: {
+					browsers: ['last 3 versions', 'ie 8', 'ie 9']
+				},
+				build: {
+					files: {
+						'build/css/master.css': 'build/css/master-unprefixed.css'
 					}
 				}
 			},
@@ -25,7 +36,7 @@ module.exports = function(grunt){
 						'doctype-first': true,
 						'spec-char-escape': true,
 						'id-unique': true,
-						'head-script-disabled': false, // allow scripts in the head
+						'head-script-disabled': false,
 						'style-disabled': true
 					},
 					src: ['*.html']
@@ -35,31 +46,44 @@ module.exports = function(grunt){
 			uglify: {
 				build: {
 					files: {
-						'js/global.min.js': ['js/global.js']
+						'build/js/global.min.js': 'dev/js/global.js'
 					}
+				}
+			},
+
+			imagemin: {
+				dynamic: {
+					files: [
+						{
+							expand: true,
+							cwd: 'dev/images/',
+							src: ['**/*.{png,jpg,gif}'],
+							dest: 'build/images/'
+						}
+					]
 				}
 			},
 
 			watch: {
 				options: {
 					livereload: true,
-		    },
+				},
 				html: {
 					files: ['*.html'],
 					tasks: ['htmlhint']
 				},
 				js: {
-					files: ['js/global.js'],
+					files: ['dev/js/global.js'],
 					tasks: ['uglify']
 				},
 				css: {
-					files: ['less/**/*.less'],
-					tasks: ['less']
+					files: ['dev/less/**/*.less'],
+					tasks: ['less','autoprefixer']
 				}
 			},
 
 	});
 
-	grunt.registerTask('default',   []);
+	grunt.registerTask('default', []);
 
 };

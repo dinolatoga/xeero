@@ -1,15 +1,17 @@
 {
-  "name": "ZeeSS",
-  "version": "0.1.0",
-  "description": "A very simple starter html framework based on LESS",
-  "author": "Dino Latoga",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-less": "*",
-    "grunt-htmlhint": "*",
-    "grunt-contrib-watch":  "*",
-    "matchdep": "*"
-  }
+	"name": "ZeeSS",
+	"version": "0.1.0",
+	"description": "A very simple starter html framework based on LESS",
+	"author": "Dino Latoga",
+	"devDependencies": {
+		"grunt": "^0.4.5",
+		"grunt-contrib-concat": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-contrib-less": "*",
+		"grunt-htmlhint": "*",
+		"grunt-contrib-watch":  "*",
+		"grunt-contrib-imagemin": "*",
+		"grunt-autoprefixer": "*",
+		"matchdep": "*"
+	}
 }
