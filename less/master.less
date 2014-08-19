@@ -5,24 +5,30 @@
 // This will be served to all browsers except IE8 and below which uses the ie.less
 //
 // @author Dino Latoga http://dinolatoga.com
-// @version 0.1.00
+// @version 0.1.10
 
 // use double slash for commenting to avoid being included no the compiled stylesheet
 
-// import global variables
+// SETTINGS : Globally-available variables and config
 @import url('globals/variables.less');
 
-// import libraries
-@import url('libs/lesshat.less');
-@import url('libs/grid.less');
-@import url('libs/mixins.less');
+// TOOLS : Useful mixins
+@import url('tools/lesshat.less');
+@import url('tools/grid.less');
+@import url('tools/mixins.less');
 
-// import resets
+// RESETS : sanitize basic styles
 @import url('globals/normalize.less');
 @import url('globals/resets.less');
 
-// import styles
+// BASE
 @import url('components/base.less');
+
+// COMPONENTS : header, footer, and main navigation
 @import url('components/layout.less');
+
+// MODULES : Re-usable containers
 @import url('components/modules.less');
+
+// STATES
 @import url('components/states.less');
