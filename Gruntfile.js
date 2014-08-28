@@ -26,6 +26,17 @@ module.exports = function(grunt){
 				}
 			},
 
+			cssmin: {
+				add_banner: {
+					options: {
+						banner: '/* Minified Master CSS File */'
+					},
+					files: {
+						'build/css/master.min.css': ['build/css/master.css']
+					}
+				}
+			},
+
 			htmlhint: {
 				build: {
 					options: {
@@ -78,7 +89,7 @@ module.exports = function(grunt){
 				},
 				css: {
 					files: ['dev/less/**/*.less'],
-					tasks: ['less','autoprefixer']
+					tasks: ['less','autoprefixer','cssmin']
 				}
 			},
 

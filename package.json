@@ -12,6 +12,7 @@
 		"grunt-contrib-watch":  "*",
 		"grunt-contrib-imagemin": "*",
 		"grunt-autoprefixer": "*",
+		"grunt-contrib-cssmin": "*",
 		"matchdep": "*"
 	}
 }
