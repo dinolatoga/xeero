@@ -212,3 +212,7 @@ body {
   font-size: 62.5%;
   line-height: 1.6;
 }
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

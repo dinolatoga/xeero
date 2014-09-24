@@ -10,7 +10,7 @@ module.exports = function(grunt){
 			less: {
 				build: {
 					files: {
-							'build/css/master.css': ['dev/less/master.less']
+							'assets/css/master.css': ['assets/less/master.less']
 					}
 				}
 			},
@@ -22,17 +22,17 @@ module.exports = function(grunt){
 				files: {
 					expand: true,
 					flatten: true,
-					src: 'build/css/*.css',
-					dest: 'build/css/'
+					src: 'assets/css/*.css',
+					dest: 'assets/css/'
 				}
 			},
 
 			cssmin: {
 				minify: {
 					expand: true,
-					cwd: 'build/css',
+					cwd: 'assets/css',
 					src: ['*.css', '!*.min.css'],
-					dest: 'build/css',
+					dest: 'assets/css',
 					ext: '.min.css'
 				}
 			},
@@ -57,7 +57,7 @@ module.exports = function(grunt){
 			uglify: {
 				build: {
 					files: {
-						'build/js/global.min.js': 'dev/js/global.js'
+						'assets/js/global.min.js': 'assets/js/global.js'
 					}
 				}
 			},
@@ -67,9 +67,9 @@ module.exports = function(grunt){
 					files: [
 						{
 							expand: true,
-							cwd: 'build/images/',
+							cwd: 'assets/images/',
 							src: ['**/*.{png,jpg,gif}'],
-							dest: 'build/images/'
+							dest: 'assets/images/'
 						}
 					]
 				}
@@ -84,15 +84,15 @@ module.exports = function(grunt){
 					tasks: ['htmlhint']
 				},
 				js: {
-					files: ['dev/js/global.js'],
+					files: ['assets/js/global.js'],
 					tasks: ['uglify']
 				},
 				less: {
-					files: ['dev/less/**/*.less'],
+					files: ['assets/less/**/*.less'],
 					tasks: ['less','autoprefixer','cssmin']
 				},
 				images: {
-					files: ['build/images/**/*.{png,jpg,gif}'],
+					files: ['assets/images/**/*.{png,jpg,gif}'],
 					tasks: ['imagemin']
 				}
 			},
