@@ -1,0 +1,11 @@
+/* TEAM */
+	Brewmeister: Dino Latoga
+	Contact: dinolatoga [at] outlook.com
+	Twitter: @stylemo
+	From: Philippines
+
+/* SITE */
+	Last update:2014/09/24
+	Language: English
+	Doctype: HTML5
+	IDE: Sublime Text
