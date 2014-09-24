@@ -1,7 +1,7 @@
 {
-	"name": "ZeeSS",
-	"version": "0.1.0",
-	"description": "A very simple starter html framework based on LESS",
+	"name": "xeero",
+	"version": "0.1.10",
+	"description": "A zero-hassle starter html5 framework",
 	"author": "Dino Latoga",
 	"devDependencies": {
 		"grunt": "^0.4.5",
