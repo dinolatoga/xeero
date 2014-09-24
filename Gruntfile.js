@@ -10,30 +10,30 @@ module.exports = function(grunt){
 			less: {
 				build: {
 					files: {
-							'build/css/master-unprefixed.css': ['dev/less/master.less']
+							'build/css/master.css': ['dev/less/master.less']
 					}
 				}
 			},
 
 			autoprefixer: {
 				options: {
-					browsers: ['last 10 versions', 'ie 8', 'ie 9']
+					browsers: ['last 10 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4']
 				},
-				build: {
-					files: {
-						'build/css/master.css': 'build/css/master-unprefixed.css'
-					}
+				files: {
+					expand: true,
+					flatten: true,
+					src: 'build/css/*.css',
+					dest: 'build/css/'
 				}
 			},
 
 			cssmin: {
-				add_banner: {
-					options: {
-						banner: '/* Minified Master CSS File */'
-					},
-					files: {
-						'build/css/master.min.css': ['build/css/master.css']
-					}
+				minify: {
+					expand: true,
+					cwd: 'build/css',
+					src: ['*.css', '!*.min.css'],
+					dest: 'build/css',
+					ext: '.min.css'
 				}
 			},
 
@@ -67,7 +67,7 @@ module.exports = function(grunt){
 					files: [
 						{
 							expand: true,
-							cwd: 'dev/images/',
+							cwd: 'build/images/',
 							src: ['**/*.{png,jpg,gif}'],
 							dest: 'build/images/'
 						}
@@ -87,9 +87,13 @@ module.exports = function(grunt){
 					files: ['dev/js/global.js'],
 					tasks: ['uglify']
 				},
-				css: {
+				less: {
 					files: ['dev/less/**/*.less'],
 					tasks: ['less','autoprefixer','cssmin']
+				},
+				images: {
+					files: ['build/images/**/*.{png,jpg,gif}'],
+					tasks: ['imagemin']
 				}
 			},
 
