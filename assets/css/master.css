@@ -9,6 +9,14 @@ body:after {
 body:after {
   clear: both;
 }
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -212,7 +220,35 @@ body {
   font-size: 62.5%;
   line-height: 1.6;
 }
+a {
+  position: relative;
+  padding: 1rem;
+  margin: -1rem;
+  color: #0088cc;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+a:hover {
+  color: #00aaff;
+}
+table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
 .disabled {
   pointer-events: none;
   opacity: 0.5;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
