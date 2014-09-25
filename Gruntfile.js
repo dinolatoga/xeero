@@ -1,7 +1,7 @@
 module.exports = function(grunt){
 
 	"use strict";
-	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 
@@ -22,7 +22,8 @@ module.exports = function(grunt){
 				files: {
 					expand: true,
 					flatten: true,
-					src: 'assets/css/*.css',
+					cwd: 'assets/css',
+					src: ['*.css', '!*.min.css'],
 					dest: 'assets/css/'
 				}
 			},
