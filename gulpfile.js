@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 // Styles
 gulp.task('styles', function() {
-	gulp.src('assets/less/master.less')
+	gulp.src('assets/less/styles.less')
 		.pipe(plugins.less())
 		.on('error', plugins.util.log)
 		.pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
