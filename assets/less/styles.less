@@ -4,9 +4,7 @@
 //
 //
 // @author Dino Latoga http://dinolatoga.com
-// @version 0.1.10
-
-// use double slash for commenting to avoid being included no the compiled stylesheet
+// @version 0.2.0
 
 // SETTINGS : Globally-available variables and config
 @import url('_variables.less');
@@ -21,8 +19,13 @@
 // BASE
 @import url('_base.less');
 
-// COMPONENTS : header, footer, and main navigation
-@import url('_layout.less');
-
-// MODULES : Re-usable containers
+// MODULES
 @import url('_modules.less');
+
+// CUSTOM
+@import url('_custom.less');
+
+// RESPONSIVE STYLES
+@import url('_mobile.less');
+@media (min-width: @tablet ) { @import url('_tablet.less'); }
+@media (min-width: @desktop ) { @import url('_desktop.less'); }
