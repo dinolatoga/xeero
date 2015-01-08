@@ -1,42 +1,7 @@
-// GUIDE:
-// Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this. (http://smacss.com/book/categorizing)
-
+// BASE
+// includes base, typography and link styles
+html { font-size: 62.5%; }
 body{
-	font-size: 62.5%;
+	font-size: 1.3rem;
 	line-height: @baseLineHeight;
-}
-
-// increase hit area on links
-a {
-	position: relative;
-	padding: 1rem;
-	margin: -1rem;
-	color: @hyperlink;
-	text-decoration: none;
-	transition: all 0.3s ease-out;
-	&:hover {
-		color: @hyperlink-hover;
-	}
-}
-table tr:nth-child(even) {
-	background: rgba(0,0,0,0.1);
-}
-
-// base font style classes
-.content {}
-.title {}
-.code {}
-
-// useful classes
-.disabled {
-	pointer-events: none;
-	opacity: 0.5;
-}
-.clearfix {
-	.clearfix;
-}
-.ir {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
 }
