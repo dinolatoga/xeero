@@ -43,11 +43,20 @@ gulp.task('images', function() {
 		.pipe(plugins.notify({ message: 'Images task complete' }));
 });
 
+// HTML
+gulp.task('html', function() {
+	gulp.src('*.html')
+		.pipe(reload({stream:true}))
+		.pipe(plugins.livereload())
+		.pipe(plugins.notify({ message: 'HTML has been updated' }));
+});
+
 gulp.task('watch', function() {
 	plugins.livereload.listen();
 	gulp.watch('assets/less/**/*.less', ['styles']);
 	gulp.watch('assets/js/**/*.js', ['scripts']);
 	gulp.watch('assets/images/**/*', ['images']);
+	gulp.watch('*.html', ['html']);
 });
 
 gulp.task('default', ['styles', 'scripts', 'watch' ]);
